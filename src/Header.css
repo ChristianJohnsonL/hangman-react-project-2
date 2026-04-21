@@ -24,6 +24,13 @@ text-align: center;
 margin: 0;
 }
 
+.header-user {
+    position: absolute;
+    right: 90px;
+    font-size: 14px;
+    color: #ccc;
+}
+
 .settingsPic
 {
     position:absolute;

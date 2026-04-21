@@ -3,7 +3,7 @@ import './Header.css';
 import settings from './Settings.png';
 
 
-function Header()
+function Header({ username })
 {  const handleNewGame = () => {window.location.reload();};
     return(
         <header className = "header">
@@ -24,6 +24,7 @@ function Header()
             <h1 className="Title">
                 Hang 'em
             </h1>
+            {username && <span className="header-user">{username}</span>}
             <img className="settingsPic" src={settings} alt = "settings"/>
         </header>
     );

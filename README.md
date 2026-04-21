@@ -1,37 +1,37 @@
-# Hangman React Project 2
+# Hangman
 
-## Run with Docker
+Hangman game
 
-### 1. Prerequisite
-- Instal Docker Desktop and make sure it is running.
+## Requirements
 
-### 2. Build image
-```powershell
-docker build -t hangman2 .
-```
+- Node.js
+- Docker Desktop (needs to be open and running)
 
-### 3. Run container
-```powershell
-docker run --rm -p 3000:3000 -e HOST=0.0.0.0 -e PORT=3000 hangman2 npm start
-```
+## Setup
 
-### 4. Open app
-- http://localhost:3000
-
-## Run without Docker (npm)
-
-### 1. Install dependencies
-```powershell
+Install dependencies:
+```bash
 npm install
 ```
 
-### 2. Start app
-```powershell
+Create the database table (once):
+```bash
+node dynamo/db/setup.js
+```
+
+## Running it
+
+You need 3 terminals:
+
+```bash
+# Terminal 1 - database
+cd dynamo && docker compose up
+
+# Terminal 2 - server
+npm run server
+
+# Terminal 3 - app
 npm start
 ```
 
-### 3. Open app
-- http://localhost:3000
-
-## Stop
-- Press `Ctrl + C` in the terminal.
+App runs at http://localhost:3000
